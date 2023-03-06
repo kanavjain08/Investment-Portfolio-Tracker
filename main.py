@@ -1,6 +1,4 @@
-import requests
 from website import create_app
-from bs4 import BeautifulSoup
 
 app = create_app()
 
