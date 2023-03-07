@@ -1,4 +1,18 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content %} 
-<h1>This is the home page</h1> 
+<form method = "POST">
+    <style>
+        h3 {text-align: center; padding: 30px;}
+    </style>
+    <h3 align = "center">Home Page</h3>
+    <style>
+        .stocksymbol-label {
+            padding-top: 20px;
+        }
+    </style>
+    <div class = "form-group">
+        <label for = "stocksymbol" class = "stocksymbol-label">Stock Symbol</label>
+        <input type = "text" class = "form-control" id = "stocksymbol" name = "stocksymbol" placeholder = "Enter Stock Symbol">
+    </div>
+</form>
 {% endblock %}
