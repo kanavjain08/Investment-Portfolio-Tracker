@@ -13,6 +13,20 @@
     <div class = "form-group">
         <label for = "stocksymbol" class = "stocksymbol-label">Stock Symbol</label>
         <input type = "text" class = "form-control" id = "stocksymbol" name = "stocksymbol" placeholder = "Enter Stock Symbol">
+    </div> 
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="row">
+        <div class="col-md-6">
+            <style>
+                h5 {
+                    padding-top: 30px;
+                    padding-bottom: 10px;
+                }
+            </style>
+            <h5><strong>Stock Info</strong></h5>
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Data:</strong> {{ _data }}</p>
+        </div>
     </div>
 </form>
 {% endblock %}

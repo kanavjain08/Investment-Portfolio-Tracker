@@ -1,16 +1,31 @@
-from flask import Blueprint, render_template
-from flask_login import login_user, login_required, logout_user, current_user
-
+from flask import Blueprint, render_template, request
+from flask_login import login_required, current_user
+from getprice import *
 
 views = Blueprint('views', __name__)
 
-@views.route('/home')
+@views.route('/home', methods = ['GET', 'POST'])
 @login_required
 def home():
-    return render_template("home.html", user = current_user)
+    if request.method == 'POST':
+        symbol = request.form.get('stocksymbol')
+        stock_info = getData(symbol)
+        name = "TSLA"
+        _data = getData(name)
+        return render_template("home.html", user = current_user, name = symbol, _data = stock_info)
+    else:
+        return render_template("home.html", user = current_user)
 
-@views.route('/')
+
+@views.route('/', methods = ['GET', 'POST'])
 @login_required
-def home_def():
-    return render_template("home.html", user = current_user)
+def home_def(): 
+    if request.method == 'POST':
+        symbol = request.form.get('stocksymbol')
+        stock_info = getData(symbol)
+        name = "TSLA"
+        _data = getData(name)
+        return render_template("home.html", user = current_user, name = symbol, _data = stock_info)
+    else:
+        return render_template("home.html", user = current_user)
 
