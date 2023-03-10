@@ -19,6 +19,3 @@ def getData (symbol):
     }
     
     return stock
-
-name = "TSLA"
-_data = getData(name)
