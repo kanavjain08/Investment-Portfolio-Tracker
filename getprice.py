@@ -20,7 +20,5 @@ def getData (symbol):
     
     return stock
 
-
-name = input("Enter Stock Symbol: ")
-print("Stock: ", name)
-print(getData(name))
+name = "TSLA"
+_data = getData(name)
