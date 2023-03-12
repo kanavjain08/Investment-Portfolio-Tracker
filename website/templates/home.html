@@ -27,6 +27,9 @@
             <ul class="list-group list-group-flush" id="stock">
                 {% for stock in user.stock %}
                 <li class="list-group-item">{{ stock.data }}</li>
+                    <button type = "button" class = "close" onClick = "deleteItem({{ stock.id }})">
+                        <span aria-hidden = "true">&times;</span>
+                    </button>
                 {% endfor %}
             </ul>
         </div>
